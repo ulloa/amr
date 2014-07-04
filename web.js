@@ -6,7 +6,7 @@ app.use(express.logger());
 
 var fs = require('fs');
 var htmlfile = "index.html";
-app.set('views', __dirname + '/public');
+app.set('views', __dirname + '/views');
 app.engine('html', require('ejs').renderFile);
 
 app.get('/', function(request, response) {
@@ -20,6 +20,34 @@ app.use(express.static(__dirname + '/public')); // just added for static files
 app.get('/about', function (req, res)
 {
     res.render('about.html');
+});
+app.get('/events', function (req, res)
+{
+    res.render('events.html');
+});
+app.get('/staff', function (req, res)
+{
+    res.render('staff.html');
+});
+app.get('/support', function (req, res)
+{
+    res.render('support.html');
+});
+app.get('/research', function (req, res)
+{
+    res.render('research.html');
+});
+app.get('/currentprojects', function (req, res)
+{
+    res.render('currentprojects.html');
+});
+app.get('/publications', function (req, res)
+{
+    res.render('publications.html');
+});
+app.get('/researchbytopic', function (req, res)
+{
+    res.render('researchbytopic.html');
 });
 
 var port = process.env.PORT || 8080;
